@@ -1,4 +1,4 @@
-package step.one;
+package step._1;
 
 public class Dog {
     public static void main(String[] args) {

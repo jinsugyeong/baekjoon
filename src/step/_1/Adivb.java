@@ -1,4 +1,4 @@
-package step.one;
+package step._1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,27 +7,19 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Calculation {
+public class Adivb {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int a = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        double a = Double.parseDouble(st.nextToken());
+        double b = Double.parseDouble(st.nextToken());
+        double result = a/b;
 
-        bw.write(String.valueOf(a+b));
-        bw.newLine();
-        bw.write(String.valueOf(a-b));
-        bw.newLine();
-        bw.write(String.valueOf(a*b));
-        bw.newLine();
-        bw.write(String.valueOf(a/b));
-        bw.newLine();
-        bw.write(String.valueOf(a%b));
+        bw.write(String.valueOf(result));
         bw.flush();
         bw.close();
     }
-    
 }
