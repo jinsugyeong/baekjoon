@@ -21,5 +21,6 @@ public class B9498 {
         }
 
         System.out.println(result);
+        in.close();
     }
 }
