@@ -26,7 +26,9 @@ public class B10950 {
         }
 
         for(int  j: sum){
-            System.out.println(j);
+            bw.write(String.valueOf(j));
         }
+        bw.flush();
+        bw.close();
     }
 }
