@@ -1,32 +1,41 @@
 package step._6;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
- 
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class B10809 {
- 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
- 
-		int[] arr = new int[26];
-		
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = -1;
-		}
- 
-		String S = br.readLine();
- 
-		for(int i = 0; i < S.length(); i++) {
-			char ch = S.charAt(i);
-    
-			if(arr[ch - 'a'] == -1) {	// arr 원소 값이 -1 인 경우에만 초기화
-				arr[ch - 'a'] = i;
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String input = br.readLine();
+		char[] inputArr = input.toCharArray();
+		char s = 'a';
+	
+
+		for(int i=0; i<26; i++){
+			int a = 0;
+			for(int j=0; j<inputArr.length; j++){
+				if(s == inputArr[j]){
+					bw. write(String.valueOf(j));
+					bw.write(" ");
+					a = 1;
+					break;
+				}
 			}
+
+			if(a == 0){
+				bw.write("-1 ");
+			}
+			
+			s++;
 		}
- 
-		for(int val : arr) {	// 배열 출력
-			System.out.print(val + " ");
-		}
+
+		br.close();
+		bw.flush();
+		bw.close();
+
 	}
 }
