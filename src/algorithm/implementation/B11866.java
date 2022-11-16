@@ -16,6 +16,7 @@ public class B11866 {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		br.close();
 		
 		int N = Integer.parseInt(st.nextToken());
 		int K = Integer.parseInt(st.nextToken());
@@ -25,23 +26,23 @@ public class B11866 {
 		for(int i=1; i<N+1; i++) {inputList.add(i);}
 		
 		bw.write("<");
+		
+		N = K;
 		while(true) {
-			System.out.println(K + " " + inputList.get(K-1));
+			N--;
+			bw.write(String.valueOf(inputList.get(N)));
+			inputList.remove(N);
 
-			bw.write(String.valueOf(inputList.get(K-1)));
-			inputList.remove(K-1);
 			if(inputList.size() < 1) break;
 			else bw.write(", ");
 
-			K += 2;
-			if(K > inputList.size()) K %= inputList.size();
-			if(K == 0) K = inputList.size();
+			N += K;
+			if(N > inputList.size()) N %= inputList.size();
+			if(N == 0) N = inputList.size();
 		}
 		bw.write(">");
 		
 		bw.flush();
 		bw.close();
-		
 	}
-
 }
