@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -26,12 +24,18 @@ public class B11866 {
 		
 		for(int i=1; i<N+1; i++) {inputList.add(i);}
 		
-		int i = 3;
 		bw.write("<");
-		while(inputList.size() == 0) {
-			if(inputList.size() < i) {i %= inputList.size();}
-			bw.write(String.valueOf(inputList.get(i-1)));
-			inputList.remove(i-1);
+		while(true) {
+			System.out.println(K + " " + inputList.get(K-1));
+
+			bw.write(String.valueOf(inputList.get(K-1)));
+			inputList.remove(K-1);
+			if(inputList.size() < 1) break;
+			else bw.write(", ");
+
+			K += 2;
+			if(K > inputList.size()) K %= inputList.size();
+			if(K == 0) K = inputList.size();
 		}
 		bw.write(">");
 		
