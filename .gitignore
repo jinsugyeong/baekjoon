@@ -1,5 +1,9 @@
 /.vscode
 /workspace.code-workspace
 bin/*
+<<<<<<< HEAD
 /.metadata
 /.recommenders
+=======
+/bin/
+>>>>>>> 5f589a6d92f1e59ccb1a06b0614499edc5794b7f
